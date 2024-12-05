@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <link rel="shortcut icon" href="../images/main-logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" title="KIDS PRE SCHOOL">
+            <img src="../images/main-logo.png" alt="">
+            <!-- <h2>U<span class="danger">M</span>S</h2> -->
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="timetable.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Time Table</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Examination</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Change Password</h3>
+            </a>
+            <a href="../exit.php">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container">
+        <aside>
+            <div class="profile">
+                <!-- <div class="top">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Hey, <b>`${user_name}`</b> </p>
+                        <small class="text-muted">12102030</small>
+                    </div>
+                </div> -->
+                <p style="font-size: 24px;">Tutor Details</p>
+                <div class="about">
+                    <h5>NAME</h5>
+                    <p>Selva Muthu Kumar</p>
+                    <h5>DOB</h5>
+                    <p>15.09.2001</p>
+                    <h5>Contact</h5>
+                    <p>9176056131</p>
+                    <h5>Email</h5>
+                    <p>vmkl@gmail.com</p>
+                    <h5>Address</h5>
+                    <p>11/1, Anna New Street, Kalugumalai</p>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Scheduled Live Classes</h1>
+            <div class="subjects">
+                <div class="eg">
+                    <span class="material-icons-sharp">architecture</span>
+                    <h3>Website Development</h3>
+                    <h2></h2>
+                    
+                    <a href="https://nskc.vercel.app/meeting/user_2nW3F3xxVECu84Aujcp3bRJIyLm?personal=true">
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;">Start</button></a>
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;" onclick="linkfun()">Active Link</button>
+                    <small class="text-muted">By Vasanth</small>
+                </div>
+                <div class="mth">
+                    <span class="material-icons-sharp">functions</span>
+                    <h3>VEDHIC MATHS</h3>
+                    <h2>27/29</h2>
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;">Start</button>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <div class="cs">
+                    <span class="material-icons-sharp">computer</span>
+                    <h3>Computer Class</h3>
+                    <h2>27/30</h2>
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;">Start</button>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <div class="cg">
+                    <span class="material-icons-sharp">dns</span>
+                    <h3>Abacus</h3>
+                    <h2>24/25</h2>
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;">Start</button>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <div class="net">
+                    <span class="material-icons-sharp">router</span>
+                    <h3>Spoken English</h3>
+                    <h2>25/27</h2>
+                    <button style="width: 100%; border: 1px solid crimson; color: crimson; border-radius: 8px; background-color: white; font-weight: 600; margin: 10px 0; padding: 6px;">Start</button>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+            </div>
+
+            <div class="timetable" id="timetable">
+                <div>
+                    <span id="prevDay">&lt;</span>
+                    <h2>Today's Timetable</h2>
+                    <span id="nextDay">&gt;</span>
+                </div>
+                <span class="closeBtn" onclick="timeTableAll()">X</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Room No.</th>
+                            <th>Subject</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+
+        <div class="right">
+            <div class="announcements">
+                <h2>Active Link</h2>
+                <h3></h3>
+                <form action="#" method="POST" id="activelink">
+
+                    <div class="linkpaste">
+                      <input type="name" placeholder="To Paste Link to Start a Class" class="input" name="name">
+                    </div>
+          
+                    <div class="classstart">
+                      <button>Start Class</button>
+                    </div>
+                  </form>
+            </div>
+
+            <div class="leaves">
+                <h2>Teachers on leave</h2>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-2.jpeg" alt=""></div>
+                    <div class="info">
+                        <h3>The Professor</h3>
+                        <small class="text-muted">Full Day</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-3.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>Lisa Manobal</h3>
+                        <small class="text-muted">Half Day</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-4.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>Himanshu Jindal</h3>
+                        <small class="text-muted">Full Day</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="app.js"></script>
+    <script src="../startjoin.js"></script>
+    <script>
+        var de = document.getElementById("activelink");
+        function linkfun(){
+            de.style.display = "unset";
+        }
+    </script>
+</body>
+</html>
